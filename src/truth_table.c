@@ -1,6 +1,6 @@
 /*
  * 2011-07-07
- * ÀëÉ¢ÊıÑ§ÕæÖµ±í
+ * ç¦»æ•£æ•°å­¦çœŸå€¼è¡¨
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -54,7 +54,7 @@ void instruction(void);
 
 /*
  * isEmpty
- * Èç¹û¶ÑÕ»Îª¿Õ£¬·µ»ØTRUE£¬·ñÔò·µ»ØFALSE
+ * å¦‚æœå †æ ˆä¸ºç©ºï¼Œè¿”å›TRUEï¼Œå¦åˆ™è¿”å›FALSE
  */
 int isEmpty(StackNode *stack)
 {
@@ -63,7 +63,7 @@ int isEmpty(StackNode *stack)
 
 /*
  * push
- * °ÑÒ»¸öĞÂÖµÑ¹µ½¶ÑÕ»ÖĞ¡£ËüµÄ²ÎÊıÊÇĞèÒª±»Ñ¹ÈëµÄÖµ¡£
+ * æŠŠä¸€ä¸ªæ–°å€¼å‹åˆ°å †æ ˆä¸­ã€‚å®ƒçš„å‚æ•°æ˜¯éœ€è¦è¢«å‹å…¥çš„å€¼ã€‚
  */
 void push(StackNode **stackp, STACK_TYPE value)
 {
@@ -77,7 +77,7 @@ void push(StackNode **stackp, STACK_TYPE value)
 
 /*
  * pop
- * ´Ó¶ÑÕ»ÖĞµ¯³öÒ»¸öÖµ£¬²¢½«Æä¶ªÆú¡£
+ * ä»å †æ ˆä¸­å¼¹å‡ºä¸€ä¸ªå€¼ï¼Œå¹¶å°†å…¶ä¸¢å¼ƒã€‚
  */
 void pop(StackNode **stackp)
 {
@@ -90,7 +90,7 @@ void pop(StackNode **stackp)
 
 /*
  * getTop
- * ·µ»Ø¶ÑÕ»¶¥²¿ÔªËØµÄÖµ£¬µ«²»¶Ô¶ÑÕ»½øĞĞĞŞ¸Ä¡£
+ * è¿”å›å †æ ˆé¡¶éƒ¨å…ƒç´ çš„å€¼ï¼Œä½†ä¸å¯¹å †æ ˆè¿›è¡Œä¿®æ”¹ã€‚
  */
 STACK_TYPE getTop(StackNode *stack)
 {
@@ -100,7 +100,7 @@ STACK_TYPE getTop(StackNode *stack)
 
 /*
  * destroyStack
- * Ïú»Ù¶ÑÕ»
+ * é”€æ¯å †æ ˆ
  */
 void destroyStack(StackNode **stackp)
 {
@@ -112,7 +112,7 @@ void destroyStack(StackNode **stackp)
 
 /*
  * getstr
- * ´ÓStdIn»ñÈ¡Ò»ĞĞÊäÈë
+ * ä»StdInè·å–ä¸€è¡Œè¾“å…¥
  */
 char *getstr(void)
 {
@@ -139,7 +139,7 @@ char *getstr(void)
 
 /*
  * fReadLine
- * ´ÓÎÄ¼ş»ñÈ¡Ò»ĞĞÊäÈë
+ * ä»æ–‡ä»¶è·å–ä¸€è¡Œè¾“å…¥
  */
 char *fReadLine(FILE *stream)
 {
@@ -171,7 +171,7 @@ char *fReadLine(FILE *stream)
 
 /*
  * isoperator
- * ÅĞ¶ÏÊÇ·ñÊÇºÏ·¨µÄ²Ù×÷·û
+ * åˆ¤æ–­æ˜¯å¦æ˜¯åˆæ³•çš„æ“ä½œç¬¦
  */
 int isoperator(char c)
 {
@@ -188,7 +188,7 @@ int isoperator(char c)
 }
 
 /*
- * ÅĞ¶ÏÊÇ·ñÊÇË«Ä¿²Ù×÷·û
+ * åˆ¤æ–­æ˜¯å¦æ˜¯åŒç›®æ“ä½œç¬¦
  */
 int isbinaryoperator(char c)
 {
@@ -197,7 +197,7 @@ int isbinaryoperator(char c)
 
 /*
  * priority
- * Êä³öÁª½á´ÊµÄÓÅÏÈ¼¶
+ * è¾“å‡ºè”ç»“è¯çš„ä¼˜å…ˆçº§
  */
 int priority(char opr)
 {
@@ -219,7 +219,7 @@ int priority(char opr)
 }
 
 /*
- * ÅĞ¶Ï±í´ïÊ½ÊÇ·ñºÏ·¨
+ * åˆ¤æ–­è¡¨è¾¾å¼æ˜¯å¦åˆæ³•
  */
 int is_valid_expression(const char *exp)
 {
@@ -227,16 +227,16 @@ int is_valid_expression(const char *exp)
     int lbracket, rbracket;
     int lbracketpos, rbracketpos;
     len = strlen(exp);
-    /* ¿ªÍ·µÄ×Ö·ûÒªÇó  */
+    /* å¼€å¤´çš„å­—ç¬¦è¦æ±‚  */
     if (!isupper(exp[0]) && exp[0] != '(' && exp[0] != '!')
     {
-        printf("¿ªÍ·×Ö·û´íÎó!\n");
+        printf("å¼€å¤´å­—ç¬¦é”™è¯¯!\n");
         return 0;
     }
-    /* ½áÎ²µÄ×Ö·ûÒªÇó  */
+    /* ç»“å°¾çš„å­—ç¬¦è¦æ±‚  */
     if (!isupper(exp[len - 1]) && exp[len - 1] != ')')
     {
-        printf("½áÎ²×Ö·û´íÎó!\n");
+        printf("ç»“å°¾å­—ç¬¦é”™è¯¯!\n");
         return 0;
     }
 
@@ -251,20 +251,20 @@ int is_valid_expression(const char *exp)
             rbracket++;
         else if (!isoperator(exp[i]))
         {
-            printf("°üº¬²»ºÏ·¨×Ö·û!\n");
+            printf("åŒ…å«ä¸åˆæ³•å­—ç¬¦!\n");
             return 0;
         }
     }
-    /* ±í´ïÊ½ÖĞ±äÔªµÄ¸öÊıÖÁÉÙÎª1  */
+    /* è¡¨è¾¾å¼ä¸­å˜å…ƒçš„ä¸ªæ•°è‡³å°‘ä¸º1  */
     if (count == 0)
     {
-        printf("Ã»ÓĞ±äÔª!\n");
+        printf("æ²¡æœ‰å˜å…ƒ!\n");
         return 0;
     }
-    /* ×óÓÒÀ¨ºÅÊıÒªÏàµÈ  */
+    /* å·¦å³æ‹¬å·æ•°è¦ç›¸ç­‰  */
     if (lbracket != rbracket)
     {
-        printf("À¨ºÅÊı²»µÈ!\n");
+        printf("æ‹¬å·æ•°ä¸ç­‰!\n");
         return 0;
     }
     else if (lbracket > 0)
@@ -286,19 +286,19 @@ int is_valid_expression(const char *exp)
             }
             if (lbracket == rbracket && lbracketpos > rbracketpos)
             {
-                printf("À¨ºÅÎ»ÖÃ²»Æ¥Åä!\n");
+                printf("æ‹¬å·ä½ç½®ä¸åŒ¹é…!\n");
                 return 0;
             }
         }
     }
-    /* Ã¿¸ö×Ö·û×óÓÒÓ¦Âú×ãµÄÌõ¼ş  */
+    /* æ¯ä¸ªå­—ç¬¦å·¦å³åº”æ»¡è¶³çš„æ¡ä»¶  */
     for (i = 0; i < len - 1; i++)
     {
         if (isupper(exp[i]))
         {
             if (exp[i + 1] != ')' && !isbinaryoperator(exp[i + 1]))
             {
-                printf("'%c'ÓÒ±ßÓĞÎó!´íÎó: %c%c\n", exp[i], exp[i], exp[i + 1]);
+                printf("'%c'å³è¾¹æœ‰è¯¯!é”™è¯¯: %c%c\n", exp[i], exp[i], exp[i + 1]);
                 return 0;
             }
         }
@@ -306,7 +306,7 @@ int is_valid_expression(const char *exp)
         {
             if (exp[i + 1] == ')' || isbinaryoperator(exp[i + 1]))
             {
-                printf("'%c'ÓÒ±ßÓĞÎó!´íÎó: %c%c\n", exp[i], exp[i], exp[i + 1]);
+                printf("'%c'å³è¾¹æœ‰è¯¯!é”™è¯¯: %c%c\n", exp[i], exp[i], exp[i + 1]);
                 return 0;
             }
         }
@@ -314,7 +314,7 @@ int is_valid_expression(const char *exp)
         {
             if (exp[i + 1] != ')' && !isbinaryoperator(exp[i + 1]))
             {
-                printf("'%c'ÓÒ±ßÓĞÎó!´íÎó: %c%c\n", exp[i], exp[i], exp[i + 1]);
+                printf("'%c'å³è¾¹æœ‰è¯¯!é”™è¯¯: %c%c\n", exp[i], exp[i], exp[i + 1]);
                 return 0;
             }
         }
@@ -322,7 +322,7 @@ int is_valid_expression(const char *exp)
         {
             if (exp[i + 1] == ')' || isbinaryoperator(exp[i + 1]))
             {
-                printf("'%c'ÓÒ±ßÓĞÎó!´íÎó: %c%c\n", exp[i], exp[i], exp[i + 1]);
+                printf("'%c'å³è¾¹æœ‰è¯¯!é”™è¯¯: %c%c\n", exp[i], exp[i], exp[i + 1]);
                 return 0;
             }
         }
@@ -330,7 +330,7 @@ int is_valid_expression(const char *exp)
         {
             if (exp[i + 1] == ')' || isbinaryoperator(exp[i + 1]))
             {
-                printf("'%c'ÓÒ±ßÓĞÎó!´íÎó: %c%c\n", exp[i], exp[i], exp[i + 1]);
+                printf("'%c'å³è¾¹æœ‰è¯¯!é”™è¯¯: %c%c\n", exp[i], exp[i], exp[i + 1]);
                 return 0;
             }
         }
@@ -339,7 +339,7 @@ int is_valid_expression(const char *exp)
 }
 
 /*
- * »ñÈ¡±í´ïÊ½ĞÅÏ¢
+ * è·å–è¡¨è¾¾å¼ä¿¡æ¯
  */
 ExpInfo *get_info(const char *exp)
 {
@@ -361,19 +361,19 @@ ExpInfo *get_info(const char *exp)
 }
 
 /*
- * ÖĞ×º×ªºó×º
- * Ëã·¨
- * 1)¼ì²éÊäÈëµÄÏÂÒ»ÔªËØ¡£
- * 2)¼ÙÈçÊÇ¸ö²Ù×÷Êı£¬Êä³ö¡£
- * 3)¼ÙÈçÊÇ¸ö¿ªÀ¨ºÅ£¬½«ÆäÑ¹Õ»¡£
- * 4)¼ÙÈçÊÇ¸öÔËËã·û£¬Ôò
- *	  i) ¼ÙÈçÕ»Îª¿Õ£¬½«´ËÔËËã·ûÑ¹Õ»¡£
- * 	 ii) ¼ÙÈçÕ»¶¥ÊÇ¿ªÀ¨ºÅ£¬½«´ËÔËËã·ûÑ¹Õ»¡£
- * 	iii) ¼ÙÈç´ËÔËËã·û±ÈÕ»¶¥ÔËËã·ûÓÅÏÈ¼¶¸ß£¬½«´ËÔËËã·ûÑ¹ÈëÕ»ÖĞ¡£
- * 	 iv) ·ñÔòÕ»¶¥ÔËËã·û³öÕ»²¢Êä³ö£¬ÖØ¸´²½Öè4¡£
- * 5)¼ÙÈçÊÇ¸ö±ÕÀ¨ºÅ£¬Õ»ÖĞÔËËã·ûÖğ¸ö³öÕ»²¢Êä³ö£¬Ö±µ½Óöµ½¿ªÀ¨ºÅ¡£¿ªÀ¨ºÅ³öÕ»²¢¶ªÆú¡£
- * 6)¼ÙÈçÊäÈë»¹Î´Íê±Ï£¬Ìø×ªµ½²½Öè1¡£
- * 7)¼ÙÈçÊäÈëÍê±Ï£¬Õ»ÖĞÊ£ÓàµÄËùÓĞ²Ù×÷·û³öÕ»²¢Êä³öËüÃÇ¡£
+ * ä¸­ç¼€è½¬åç¼€
+ * ç®—æ³•
+ * 1)æ£€æŸ¥è¾“å…¥çš„ä¸‹ä¸€å…ƒç´ ã€‚
+ * 2)å‡å¦‚æ˜¯ä¸ªæ“ä½œæ•°ï¼Œè¾“å‡ºã€‚
+ * 3)å‡å¦‚æ˜¯ä¸ªå¼€æ‹¬å·ï¼Œå°†å…¶å‹æ ˆã€‚
+ * 4)å‡å¦‚æ˜¯ä¸ªè¿ç®—ç¬¦ï¼Œåˆ™
+ *	  i) å‡å¦‚æ ˆä¸ºç©ºï¼Œå°†æ­¤è¿ç®—ç¬¦å‹æ ˆã€‚
+ * 	 ii) å‡å¦‚æ ˆé¡¶æ˜¯å¼€æ‹¬å·ï¼Œå°†æ­¤è¿ç®—ç¬¦å‹æ ˆã€‚
+ * 	iii) å‡å¦‚æ­¤è¿ç®—ç¬¦æ¯”æ ˆé¡¶è¿ç®—ç¬¦ä¼˜å…ˆçº§é«˜ï¼Œå°†æ­¤è¿ç®—ç¬¦å‹å…¥æ ˆä¸­ã€‚
+ * 	 iv) å¦åˆ™æ ˆé¡¶è¿ç®—ç¬¦å‡ºæ ˆå¹¶è¾“å‡ºï¼Œé‡å¤æ­¥éª¤4ã€‚
+ * 5)å‡å¦‚æ˜¯ä¸ªé—­æ‹¬å·ï¼Œæ ˆä¸­è¿ç®—ç¬¦é€ä¸ªå‡ºæ ˆå¹¶è¾“å‡ºï¼Œç›´åˆ°é‡åˆ°å¼€æ‹¬å·ã€‚å¼€æ‹¬å·å‡ºæ ˆå¹¶ä¸¢å¼ƒã€‚
+ * 6)å‡å¦‚è¾“å…¥è¿˜æœªå®Œæ¯•ï¼Œè·³è½¬åˆ°æ­¥éª¤1ã€‚
+ * 7)å‡å¦‚è¾“å…¥å®Œæ¯•ï¼Œæ ˆä¸­å‰©ä½™çš„æ‰€æœ‰æ“ä½œç¬¦å‡ºæ ˆå¹¶è¾“å‡ºå®ƒä»¬ã€‚
  */
 char *infix_to_suffix(const char *exp)
 {
@@ -435,10 +435,10 @@ char *infix_to_suffix(const char *exp)
 
 /*
  * eval
- * ¼ÆËã±í´ïÊ½
- * row : Ã¿ĞĞ±äÔª¶ÔÓ¦µÄÖµµÄĞòÁĞ
- * exp : ºó×º±íÊ¾µÄ±í´ïÊ½
- * info: ´æ´¢±í´ïÊ½ĞÅÏ¢µÄ½á¹¹Ìå
+ * è®¡ç®—è¡¨è¾¾å¼
+ * row : æ¯è¡Œå˜å…ƒå¯¹åº”çš„å€¼çš„åºåˆ—
+ * exp : åç¼€è¡¨ç¤ºçš„è¡¨è¾¾å¼
+ * info: å­˜å‚¨è¡¨è¾¾å¼ä¿¡æ¯çš„ç»“æ„ä½“
  */
 int eval(const char *row, const char *exp, ExpInfo *info)
 {
@@ -456,8 +456,8 @@ int eval(const char *row, const char *exp, ExpInfo *info)
         }
     }
     /*
-     * ¶ÑÕ»ÖĞ´æ´¢µÄÊÇ±äÔª,Í¨¹ı¼ÆËã±äÔªÔÚelem_valÕâ¸ö±íÖĞµÄÆ«ÒÆÁ¿
-     * µÃµ½±äÔª¶ÔÓ¦µÄÖµ
+     * å †æ ˆä¸­å­˜å‚¨çš„æ˜¯å˜å…ƒ,é€šè¿‡è®¡ç®—å˜å…ƒåœ¨elem_valè¿™ä¸ªè¡¨ä¸­çš„åç§»é‡
+     * å¾—åˆ°å˜å…ƒå¯¹åº”çš„å€¼
      */
     for (i = 0; exp[i] != '\0'; i++)
     {
@@ -492,7 +492,7 @@ int eval(const char *row, const char *exp, ExpInfo *info)
                     temp = (!p || q) && (!q || p);
                     break;
             }
-            /* °ÑÔËËãµÄ½á¹ûÔÙÑ¹»Ø¶ÑÕ»ÖĞ  */
+            /* æŠŠè¿ç®—çš„ç»“æœå†å‹å›å †æ ˆä¸­  */
             push(&stack, temp);
         }
     }
@@ -503,7 +503,7 @@ int eval(const char *row, const char *exp, ExpInfo *info)
 }
 
 /*
- * ·­×ª×Ö·û´®
+ * ç¿»è½¬å­—ç¬¦ä¸²
  */
 void strReverse(char *str, int n)
 {
@@ -518,8 +518,8 @@ void strReverse(char *str, int n)
 }
 
 /*
- * ´òÓ¡ÕæÖµ±í
- * bPrint : ÊÇ·ñÊä³öµ½StdOut
+ * æ‰“å°çœŸå€¼è¡¨
+ * bPrint : æ˜¯å¦è¾“å‡ºåˆ°StdOut
  */
 int *print_table(const char *exp, ExpInfo *info, Bool bPrint)
 {
@@ -551,7 +551,7 @@ int *print_table(const char *exp, ExpInfo *info, Bool bPrint)
         tmp = i;
 
         memset(row, 0, sizeof(row));
-        /* Í¨¹ı½«Ê®½øÖÆ×ª»»³É¶ş½øÖÆÀ´Éú³ÉÃ¿ĞĞµÄĞòÁĞ  */
+        /* é€šè¿‡å°†åè¿›åˆ¶è½¬æ¢æˆäºŒè¿›åˆ¶æ¥ç”Ÿæˆæ¯è¡Œçš„åºåˆ—  */
         do
         {
             row[count++] = tmp % 2;
@@ -577,7 +577,7 @@ int *print_table(const char *exp, ExpInfo *info, Bool bPrint)
 }
 
 /*
- * ´òÓ¡ÕæÖµ±í½á¹û
+ * æ‰“å°çœŸå€¼è¡¨ç»“æœ
  */
 void print_result(const int *result, ExpInfo *info)
 {
@@ -590,7 +590,7 @@ void print_result(const int *result, ExpInfo *info)
 }
 
 /*
- * ÅĞ¶ÏÕûÊıÖ¸¶¨µÄ¶ş½øÖÆÎ»Îª1»¹ÊÇ0
+ * åˆ¤æ–­æ•´æ•°æŒ‡å®šçš„äºŒè¿›åˆ¶ä½ä¸º1è¿˜æ˜¯0
  */
 int test_bit(unsigned val, unsigned bit)
 {
@@ -599,7 +599,7 @@ int test_bit(unsigned val, unsigned bit)
 }
 
 /*
- * ÅĞ¶ÏÊÇ·ñÊÇÖØÑÔÊ½(ÓÀÕæÊ½)
+ * åˆ¤æ–­æ˜¯å¦æ˜¯é‡è¨€å¼(æ°¸çœŸå¼)
  */
 int is_tautology(const int *result, ExpInfo *info)
 {
@@ -613,7 +613,7 @@ int is_tautology(const int *result, ExpInfo *info)
 }
 
 /*
- * ÅĞ¶ÏÊÇ·ñÊÇÃ¬¶ÜÊ½(ÓÀ¼ÙÊ½)
+ * åˆ¤æ–­æ˜¯å¦æ˜¯çŸ›ç›¾å¼(æ°¸å‡å¼)
  */
 int is_contradiction(const int *result, ExpInfo *info)
 {
@@ -627,35 +627,35 @@ int is_contradiction(const int *result, ExpInfo *info)
 }
 
 /*
- * Ö÷ºÏÈ¡·¶Ê½ »òÓë±í´ïÊ½ ´óÏîºÏÈ¡¶ø³É
+ * ä¸»åˆå–èŒƒå¼ æˆ–ä¸è¡¨è¾¾å¼ å¤§é¡¹åˆå–è€Œæˆ
  */
 void print_CNF(const int *result, ExpInfo *info)
 {
     char *letter;
     int i, j, count = 0, *a;
 
-    /* ÓÀÕæÊ½Ã»ÓĞºÏÈ¡·¶Ê½  */
+    /* æ°¸çœŸå¼æ²¡æœ‰åˆå–èŒƒå¼  */
     if (is_tautology(result, info))
         return;
 
     letter = (char *)calloc(info->cols, sizeof(char));
     a = (int *)calloc(info->rows, sizeof(int));
 
-    /* letterÎª´æ·Å±äÔªµÄ×Ö·ûÊı×é  */
+    /* letterä¸ºå­˜æ”¾å˜å…ƒçš„å­—ç¬¦æ•°ç»„  */
     for (i = j = 0; i < MAX_LETTERS; i++)
     {
         if (info->elem[i])
             letter[j++] = i + 'A';
     }
 
-    /* aÎª´æ·ÅÕæÖµ±í½á¹ûÖĞÎª0µÄÏî  */
+    /* aä¸ºå­˜æ”¾çœŸå€¼è¡¨ç»“æœä¸­ä¸º0çš„é¡¹  */
     for (i = 0; i < info->rows; i++)
     {
         if (result[i] == 0)
             a[count++] = i;
     }
 
-    printf("Ö÷ºÏÈ¡·¶Ê½\n");
+    printf("ä¸»åˆå–èŒƒå¼\n");
     printf("M(");
     for (i = 0; i < count; i++)
     {
@@ -672,15 +672,15 @@ void print_CNF(const int *result, ExpInfo *info)
         for (j = 0; j < info->cols ; j++)
         {
             if (test_bit(a[i], info->cols - j - 1))
-                printf("©´%c", letter[j]);
+                printf("â”%c", letter[j]);
             else
                 printf("%c", letter[j]);
 
             if (j < info->cols - 1)
-                printf("¡Å");
+                printf("âˆ¨");
         }
         if (i < count - 1)
-            printf(")¡Ä");
+            printf(")âˆ§");
         else
             printf(")\n");
     }
@@ -689,35 +689,35 @@ void print_CNF(const int *result, ExpInfo *info)
 }
 
 /*
- * Ö÷ÎöÈ¡·¶Ê½ Óë»ò±í´ïÊ½ Ğ¡ÏîÎöÈ¡¶ø³É
+ * ä¸»æå–èŒƒå¼ ä¸æˆ–è¡¨è¾¾å¼ å°é¡¹æå–è€Œæˆ
  */
 void print_DNF(const int *result, ExpInfo *info)
 {
     char *letter;
     int i, j, count = 0, *a;
 
-    /* ÓÀ¼ÙÊ½Ã»ÓĞÎöÈ¡·¶Ê½  */
+    /* æ°¸å‡å¼æ²¡æœ‰æå–èŒƒå¼  */
     if (is_contradiction(result, info))
         return;
 
     letter = (char *)calloc(info->cols, sizeof(char));
     a = (int *)calloc(info->rows, sizeof(int));
 
-    /* letterÎª´æ·Å±äÔªµÄ×Ö·ûÊı×é  */
+    /* letterä¸ºå­˜æ”¾å˜å…ƒçš„å­—ç¬¦æ•°ç»„  */
     for (i = j = 0; i < MAX_LETTERS; i++)
     {
         if (info->elem[i])
             letter[j++] = i + 'A';
     }
 
-    /* aÎª´æ·ÅÕæÖµ±í½á¹ûÖĞÎª1µÄÏî  */
+    /* aä¸ºå­˜æ”¾çœŸå€¼è¡¨ç»“æœä¸­ä¸º1çš„é¡¹  */
     for (i = 0; i < info->rows; i++)
     {
         if (result[i] == 1)
             a[count++] = i;
     }
 
-    printf("Ö÷ÎöÈ¡·¶Ê½\n");
+    printf("ä¸»æå–èŒƒå¼\n");
     printf("M(");
     for (i = 0; i < count; i++)
     {
@@ -736,13 +736,13 @@ void print_DNF(const int *result, ExpInfo *info)
             if (test_bit(a[i], info->cols - j - 1))
                 printf("%c", letter[j]);
             else
-                printf("©´%c", letter[j]);
+                printf("â”%c", letter[j]);
 
             if (j < info->cols - 1)
-                printf("¡Ä");
+                printf("âˆ§");
         }
         if (i < count - 1)
-            printf(")¡Å");
+            printf(")âˆ¨");
         else
             printf(")\n");
     }
@@ -751,7 +751,7 @@ void print_DNF(const int *result, ExpInfo *info)
 }
 
 /*
- * Çå¿ÕÆÁÏÔ
+ * æ¸…ç©ºå±æ˜¾
  */
 void cls(void)
 {
@@ -763,7 +763,7 @@ void cls(void)
 }
 
 /*
- * ÔÚÖÕ¶ËÉÏÔİÍ£
+ * åœ¨ç»ˆç«¯ä¸Šæš‚åœ
  */
 void pause(void)
 {
@@ -776,15 +776,15 @@ void pause(void)
 
 void instruction(void)
 {
-    printf("||====ÀëÉ¢ÕæÖµ±íÉú³ÉÆ÷====||\n");
-    printf("||     '!' ·ñ¶¨Áª½á´Ê     ||\n");
-    printf("||     '&' ºÏÈ¡Áª½á´Ê     ||\n");
-    printf("||     '|' ÎöÈ¡Áª½á´Ê     ||\n");
-    printf("||     '>' ÔÌº¬Áª½á´Ê     ||\n");
-    printf("||     '#' µÈÖµÁª½á´Ê     ||\n");
-    printf("||     'q' ÍË³ö³ÌĞò       ||\n");
+    printf("||====ç¦»æ•£çœŸå€¼è¡¨ç”Ÿæˆå™¨====||\n");
+    printf("||     '!' å¦å®šè”ç»“è¯     ||\n");
+    printf("||     '&' åˆå–è”ç»“è¯     ||\n");
+    printf("||     '|' æå–è”ç»“è¯     ||\n");
+    printf("||     '>' è•´å«è”ç»“è¯     ||\n");
+    printf("||     '#' ç­‰å€¼è”ç»“è¯     ||\n");
+    printf("||     'q' é€€å‡ºç¨‹åº       ||\n");
     printf("||========================||\n");
-    printf("ÊäÈë±í´ïÊ½:");
+    printf("è¾“å…¥è¡¨è¾¾å¼:");
 }
 
 int main(int argc, char *argv[])
@@ -795,7 +795,7 @@ int main(int argc, char *argv[])
     FILE *fp;
 
 #ifdef _WIN32
-    system("title ÀëÉ¢ÊıÑ§ÕæÖµ±í");
+    system("title ç¦»æ•£æ•°å­¦çœŸå€¼è¡¨");
 #endif
 
     if (argc == 2)
@@ -842,7 +842,7 @@ int main(int argc, char *argv[])
         if (!is_valid_expression(exp))
         {
 			free(exp);
-            printf("²»ºÏ·¨µÄ±í´ïÊ½!\n");
+            printf("ä¸åˆæ³•çš„è¡¨è¾¾å¼!\n");
             pause();
             continue;
         }

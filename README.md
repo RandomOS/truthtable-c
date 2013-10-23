@@ -1,7 +1,7 @@
-# Usage
+## Usage
 truth_table [FILE]
 
-# Description
+## Description
 Truth table calculator written in ANSI C
 
 * `!`: not
@@ -11,12 +11,12 @@ Truth table calculator written in ANSI C
 * `#`: equivalence
 * `A-Z`: element
 
-# Options
+## Options
 FILE
     read FILE, each line is an expression, print each true table in line.
 
-# Compile
+## Compile
     gcc truth_table.c -lm -o truth_table
 
-# Test
+## Test
     truth_table[.exe] example.txt > result.txt
